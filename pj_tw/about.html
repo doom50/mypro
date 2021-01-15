@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <meta name="dispriction" content="台湾の魅力を発信">
+    <link rel="stylesheet" href="css/destyle.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat:wght@500&family=M+PLUS+1p:wght@100&family=Sawarabi+Gothic&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+
+
+<body>
+    <header class="wrap">
+        <h1><a href="index.html">
+                <img class="logo" src="images/vector60-11497-01.jpg" alt="logo">GET IN TAIWAN</a>
+        </h1>
+        <nav>
+            <ul class="nav_menu">
+                <li><a href="about.html">About</a></li>
+                <li><a href="template.html">Food</a></li>
+                <li><a href="#">Landscape</a></li>
+                <li><a href="#">Culture</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="content">
+            <div class="about-article">
+                <h2><span class="under blue"> Stay in Taiwan</span></h2>
+            </div>
+            <div class="about-content">
+                <p class="aboutPara">　東京から飛行機で3時間ちょっとで気軽にいける。搭乗口から降りると、6月のような湿気と匂いを感じる。
+                    <br><br>　「台湾に来たな」と思う。
+                    <br><br>　さあ、何をしようか。
+                </p>
+            </div>
+        </section>
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/SDIMG_1.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="images/SDIMG_2.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="images/SDIMG_3.jpg" alt=""></div>
+                <div class="swiper-slide"><img src="images/SDIMG_4.jpg" alt=""></div>
+
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+        </div>
+        <p class="slide-coment">台湾の景色は、朝から晩までいろいろな顔を見せてくれる。</p>
+        <!--２パラ目-->
+        <div class="about-article">
+            <h2><span class="under red">What about you?</span></h2>
+        </div>
+        <div class="food-content main">
+            お気に入りのルーロハン屋で軽食をとるもよし。<br><br>
+            火照った体をマンゴーシロップがたっぷりかかったマンゴーアイスを食べるもよし。
+            <br><br>タピオカジュースを片手に台湾大学構内を散歩するのもまた良い。
+            <br><br>
+            <div class="food-content">
+                <h3>とりあえず腹が減った。<br>
+                    ...まずは腹ごなしだ。</h3>
+            </div>
+            <div class="food-content">
+                <a class="common_btn food" href="template.html">飯屋をさがそう！</a>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="footer-wrap">
+            <p> TWPJ.Co.Ltd </p>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 100,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2300,
+                speed: 1000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+</body>
+
+</html>

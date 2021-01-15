@@ -1,0 +1,271 @@
+html {
+  font-size: 100%;
+  position: relative;
+  height: 100%;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  color: #1b1b1b;
+  letter-spacing: 0.4em;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* header */
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Spartan", sans-serif;
+}
+
+h1 {
+  font-size: 1.3rem;
+  letter-spacing: 0.4em;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+}
+
+header a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #1b1b1b;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 5px;
+}
+
+.nav_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #1b1b1b;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  text-transform: uppercase;
+  list-style: none;
+  font-size: 0.5em;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+}
+
+.nav_menu a {
+  margin: 0 12px 0;
+}
+
+.nav_menu li {
+  margin-left: 20px;
+}
+
+.wrap {
+  max-width: auto;
+  margin: 0;
+  text-align: center;
+}
+
+.wrap h2 {
+  font-size: 70px;
+  padding-bottom: 0;
+  text-align: center;
+  color: #ffffffee;
+}
+
+.wrap p {
+  font-weight: 500;
+  color: #ffffffee;
+}
+
+h2 {
+  margin-bottom: 0;
+  text-align: center;
+  margin-top: 0px;
+  color: #000000fa;
+  font-weight: bold;
+}
+
+.home-contents {
+  position: relative;
+  color: #0a0a0a;
+}
+
+.home-article {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.home-title {
+  padding: 5px 0 3px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+p {
+  text-align: center;
+  padding: 0px;
+  font-size: 1.1em;
+}
+
+.bg {
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.home {
+  background-image: url(images/topcover_l.png);
+  background-color: rgba(255, 255, 255, 0.253);
+  background-blend-mode: lighten;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 10, 10, 0.158);
+}
+
+.about-article {
+  margin-top: 100px;
+}
+
+.about-article h2 {
+  font-size: 3.5em;
+  font-weight: 300;
+  font-family: "Caveat", cursive;
+}
+
+.under {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(80%, transparent), color-stop(50%, #24b0db79));
+  background: linear-gradient(transparent 80%, #24b0db79 50%);
+}
+
+.about-content {
+  margin: 20px 0 70px;
+  max-width: 50vw;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+
+.about-content p {
+  font-size: 0.9em;
+  text-align: justify;
+}
+
+.aboutPara {
+  font-weight: lighter;
+  font-family: "Sawarabi Gothic", sans-serif;
+  margin-top: 20px;
+}
+
+.footer-wrap {
+  background-color: #6fc3fcd8;
+  height: 60px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+}
+
+.footer-wrap p {
+  position: relative;
+  width: 100%;
+  font-weight: lighter;
+  font-size: 0.7em;
+  margin: 0;
+  font-weight: normal;
+  letter-spacing: 0.3em;
+  color: white;
+  top: 50%;
+  left: 0%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+
+.swiper-container {
+  width: 800px;
+  height: 600px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.slide-coment {
+  font-weight: lighter;
+  font-size: 0.9em;
+  margin: 15px 0 150px;
+  font-weight: normal;
+  letter-spacing: 0.5em;
+}
+
+.food-content {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9em;
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+.food-content .main {
+  font-size: 0.9em;
+  margin-bottom: 60px;
+}
+
+.food-content h3 {
+  font-size: 1.3em;
+  font-weight: lighter;
+}
+/*# sourceMappingURL=style.css.map */

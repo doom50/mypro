@@ -1,0 +1,36 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../Applications/MAMP/htdocs/php-study"
+		},
+		{
+			"path": "../new_git"
+		},
+		{
+			"path": "../../plactice"
+		},
+		{
+			"path": "../../plactice/Vue"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "plactice",
+		"liveSassCompile.settings.formats": [
+
+
+
+			{
+				"format": "expanded",
+				"extensionName": ".css",
+				"savePath": null
+			}
+		],
+		"liveSassCompile.settings.includeItems": [],
+		"liveSassCompile.settings.autoprefix": [],
+		"liveSassCompile.settings.excludeList": [
+
+			"**/node_modules/**",
+			".vscode/**"
+		]
+	}
+}
