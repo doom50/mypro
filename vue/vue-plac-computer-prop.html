@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コンピュータプロパティ</title>
+    <script src="https://unpkg.com/vue@2.5.17"></script>
+</head>
+<div id="app">
+    <p>{{ count }}</p>
+    <button @click="count += 1">+1</button>
+    <p>{{ lessThanThree }}</p>
+
+    <!--<hr>
+    <p>{{ Othercount }}</p>-->
+    <!--methodsを使うと"Othercount += 1"なのに
+    lessThanThreeMethod: function name(params) {
+        console.log('methodsが動いています');
+        return this.count > 8 ?  '8より上' : '8以下'
+    }
+    が実行されてしまう。-->
+    <!--<button @click="Othercount += 1">Othercountの+1</button>
+    <p>{{ lessThanThreeMethod() }}</p>-->
+
+</div>
+<!-- Vue.jsアプリ実行コード部分 -->
+<script>
+    new Vue({ //インスタンス生成
+        el: '#app',
+        data: {
+            count: 5,
+            //Othercount:5
+        },
+        computed: {
+            lessThanThree: function name(params) {
+                console.log('computedが動いています');
+                return this.count > 10 ? '10より上' : '10以下'
+            }
+        },
+        watch: {
+            count: function () {
+                var vm = this;
+                setTimeout(function () {
+                    vm.count = 0
+                }, 3000)
+            }
+        }
+        //methods: {
+        //    lessThanThreeMethod: function name(params) {
+        //        console.log('.countに対するmethodsが動いています');
+        //        return this.count > 8 ?  '8より上' : '8以下'
+        //    }
+        //}
+    })
+</script>

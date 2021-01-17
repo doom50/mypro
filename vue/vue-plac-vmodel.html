@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-plac1</title>
+    <script src="https://unpkg.com/vue@2.5.17"></script>
+</head>
+<div id="app">
+    <input type="text" v-model="messag" name="" id="">
+    <p>{{messag}}</p>
+</div>
+<!-- Vue.jsアプリ実行コード部分 -->
+<script>
+    new Vue({ //インスタンス生成
+        el: '#app',
+        data: {
+            messag: 'goot'
+        }
+    })
+</script>

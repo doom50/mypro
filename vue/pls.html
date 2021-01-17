@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plactice</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <a v-on:click="noEvent" href="url">Google</a>
+        <p>現在{{ number }}回クリック済み</p>
+        <button v-on:[event]="countUp(2)">カウントアップ</button>   
+        <p v-on:mousemove="changeMousePosition($event, 10)">On　the　Mouse here.
+            <span v-on:mousemove.stop>dasdas</span>
+        </p>
+        <p>X:{{x}},Y:{{y}}</p>
+        <br>
+        <input type="text" v-on:keyup.enter.space="Alert" name="" id="">
+    </div>
+
+    <!--//cdnの読込み-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <!--Vue関数（コンストラクタ）部分-->
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Das kind.',
+                url: 'https://www.google.com',
+                number: 0,
+                x: 0,
+                y: 0,
+                event: 'click'
+            },
+            methods: {
+                countUp: function (times) {
+                    this.number += 1 * times
+                },
+                changeMousePosition: function (event, dividNumber) {
+                    //console.log(event);
+                    this.x = event.clientX;
+                    this.y = event.clientY;
+                },
+                noEvent: function (event) {
+                    event.preventDefault();
+                },
+                Alert() {
+                    alert('警告');
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
