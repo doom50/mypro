@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-plac1/v-text/v-html</title>
+    <script src="https://unpkg.com/vue@2.5.17"></script>
+</head>
+<!--仮想DOM部分-->
+<div id="app">
+<div v-text="test"></div>
+<div v-html="test"></div>
+</div>
+
+<!-- Vue.jsアプリ実行コード部分 -->
+<script>
+    let app = new Vue({ //インスタンス生成
+        el: '#app',
+        data() { //初期値設定
+            return {
+                test: 'あいうえお <br> いい'
+            }
+        }
+    })
+</script>
