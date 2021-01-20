@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue_plac_v-on</title>
+    <script src="https://unpkg.com/vue@2.5.17"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<button onclick="btnClicked()">Clickしてください</button>
+<button id="clickEvent" onclick="btnClicked()">Clickしてください</button>
+<button id="prev" type="submit">submit</button>
+<!--仮想DOM部分-->
+    <div id="app">
+<button @click="btnClicked">押して</button>
+<button @click="btnClickedEve">押して</button>
+    </div>
+
+    <!-- Vue.jsアプリ実行コード部分 -->
+    <script>
+        let app = new Vue({ //インスタンス生成
+            el: '#app',
+            data() { //初期値設定
+                return {
+
+                }
+            },
+            methods: {
+                btnClicked: function (params) {
+                    console.log('Vue使用時のクリックイベント');
+                },
+                btnClickedEve: function (e) {
+                    console.log(e);
+                }
+            }
+        })
+        //Java Script
+        function btnClicked() {
+            console.log('JS使用時のクリックイベント');
+        }
+        const clickEvent = document.getElementById('clickEvent');
+        clickEvent.addEventListener('click',(e) => {
+            console.log(e);
+        })
+        const prev = document.getElementById('prev');
+        prev.addEventListener('click',(e) => {
+            e.preventDefault();
+            console.log(e);
+        })
+    </script>
+</body>
