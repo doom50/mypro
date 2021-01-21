@@ -8,6 +8,7 @@
         width: 100%;
         margin-right: 0;
         margin-bottom: 20px;
+        padding: 0;
     }
 }
 
@@ -415,7 +416,7 @@ p {
 }
 
 .card__body {
-    padding: 15px;
+    padding-top: 15px;
     max-width: 50%;
     position: relative;
     left: 25%;
