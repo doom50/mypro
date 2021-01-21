@@ -14,6 +14,10 @@
 
 $btn-color1: rgba(67, 204, 204, 0.897);
 $btn-color2: rgba(36, 30, 30, 0.795);
+$under-color-blue: (#24b0db79 50%);
+$under-color-red: (#db24a479 50%);
+$under-color-yellow:(#fcf826b7 50%);
+
 
 // common
 html {
@@ -198,10 +202,13 @@ p {
 
 .under {
     &.blue {
-        background: linear-gradient(transparent 70%, #24b0db79 50%);
+        background: linear-gradient(transparent 70%, $under-color-blue);
     }
     &.red {
-        background: linear-gradient(transparent 70%, #db24a479 50%);
+        background: linear-gradient(transparent 70%, $under-color-red);
+    }
+    &.yellow {
+        background: linear-gradient(transparent 70%, $under-color-yellow);
     }
 }
 .about-content {

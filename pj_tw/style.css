@@ -210,6 +210,11 @@ p {
   background: linear-gradient(transparent 70%, #db24a479 50%);
 }
 
+.under.yellow {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, transparent), color-stop(50%, #fcf826b7));
+  background: linear-gradient(transparent 70%, #fcf826b7 50%);
+}
+
 .about-content {
   margin: 20px 0 70px;
   max-width: 50vw;
