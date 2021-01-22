@@ -1,13 +1,13 @@
 .carousel {
-  width: 840px;
-  height: 400px;
+  width: 900px;
+  height: 600px;
   margin: 0 auto;
   position: relative;
 }
 
 .carousel__main {
-  width: 640px;
-  height: 400px;
+  width: 700px;
+  height: 600px;
   margin: 0 auto;
 }
 

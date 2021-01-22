@@ -17,31 +17,37 @@
       <!--メイン画像-->
       <div class="carousel__main">
         <transition name="active">
-          <div>
-            <img :src="images[active].img" alt="">
+          <div class="carousel__main" :key="images[active].id" v-show="active === images[active].id">
+            <img :src="images[active].img" width="700" alt="">
           </div>
         </transition>
       </div>
-      <div @clicl="prev" class="carousel__next"><i class="fas fa-caret-right fa-5x"></i></div>
-      <div @clicl="next" class="carousel__prev"><i class="fas fa-caret-left fa-5x"></i></div>
+      <div @click="prev" class="carousel__prev"><i class="fas fa-caret-left fa-5x"></i></div>
+      <div @click="next" class="carousel__next"><i class="fas fa-caret-right fa-5x"></i></div>
       <ul class="carousel__thumbnails">
         <li v-for="(image, id) in images"
-         :key="image.id"
-         :class="{current: active === image.id}"
-         @click="current(image.id)">
-        <img :src="image.id" alt="">
-      </li>
+        :key="image.id"
+        :class="{current: active === image.id}"
+          @click="current(image.id)">
+          <img :src="image.img" width="400" alt="">
+        </li>
       </ul>
     </section>
   </div>
   <script>
-    let app = new Veu({
+    let app = new Vue({
       el: '#app',
       data() {
         return {
           active: 0,
           images: [
-
+            { id: 0, img: 'images/image000.jpeg' },
+            { id: 1, img: 'images/image001.jpeg' },
+            { id: 2, img: 'images/image002.jpeg' },
+            { id: 3, img: 'images/image003.jpeg' },
+            { id: 4, img: 'images/image004.jpeg' },
+            { id: 5, img: 'images/image005.jpeg' },
+            { id: 6, img: 'images/image006.jpeg' },
           ]
 
         }
@@ -65,9 +71,7 @@
           }
         }
       },
-
-    }
-  })
+    })
   </script>
 </body>
 
