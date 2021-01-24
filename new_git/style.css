@@ -102,10 +102,22 @@ li {
   padding-bottom: 5px;
   width: 100%;
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
-.todo ul {
+li .todo {
+    font-size: .9rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 40px;
+    width: 100%;
+    text-align: initial;
+    /*font-size: 1.8rem;*/
+    list-style-type: disc;
+    display: block !important;
+}
+
+.todo ol {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 40px;
@@ -227,7 +239,7 @@ main p {
 }
 
 .todo_container h2 {
-  padding: 40px 0 60px;
+  padding: 40px 0 30px;
   letter-spacing: 0.2em;
   font-family: "Merriweather", serif;
 }
@@ -330,4 +342,3 @@ a .hobby_a{
 color: #000000;
 
 }
- 

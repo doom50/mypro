@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue-plac_ajax</title>
+  <!--<script src="https://unpkg.com/vue@2.5.17"></script>-->
+  <style>
+    .common_btn__getdog {
+      display: inline-block;
+      width: 330px;
+      max-width: 100%;
+      padding: 20px 10px;
+      border: 2.5px solid transparent;
+      border-radius: 30px;
+      text-align: center;
+      text-decoration: none;
+      padding: 10px 5px;
+      font-size: 1rem;
+      background-color: #18548d;
+      box-shadow: 0 3px 2px rgba(255, 255, 255, 0.103);
+      color: rgb(255, 255, 255);
+      transition: 0.3s;
+      font-size: 1.375rem;
+    }
+  </style>
+</head>
+<!--仮想DOM部分-->
+<div id="app">
+  <button @click="getDogImage" class="common_btn__getdog">画像を取得する</button><br>
+  <img :src="dogImage">
+  <input type="text" v-model="watchTst">
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+<!-- Vue.jsアプリ実行コード部分 -->
+<script>
+  const url = 'https://dog.ceo/api/breeds/image/random';
+  const options = {
+    methods: 'get',
+  }
+
+  let app = new Vue({ //インスタンス生成
+    el: '#app',
+    data() { //初期値設定
+      return {
+        dogImage: '',
+        watchTst: ''
+      }
+    },
+    methods: {
+      async getDogImage() {
+        const respo = await fetch(url, options)
+        .then(response => response.json())
+        //console.log(respo.message)
+        this.dogImage = respo.message  //dogImageにrespo.message（取得したURL）を格納
+      }
+    },
+    watch:{
+      watchTst(){
+        this.watchDogImg()
+      }
+    },
+    created(){
+      this.getDogImage()
+      this.watchDogImg = _.debounce(this.getDogImage, 1800)
+    }
+  })
+</script>
