@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-emit</title>
+    <script src="https://unpkg.com/vue@2.5.17"></script>
+    <style>
+        .parent {
+            width: 600px;
+            margin: 0 auto;
+            border: 2px rgb(37, 156, 111) solid;
+        }
+
+        .child {
+            width: 30%;
+            margin: 10px auto;
+            border: 2.5px orange solid;
+            font-size: 1.3rem;
+            /*font-family: Georgia, 'Times New Roman', Times, serif;*/
+            /*font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+        }
+    </style>
+</head>
+<!--仮想DOM部分-->
+<div id="app" class="parent">
+    <emit-tst @cus-event="parentMethod" class="child"></emit-tst>
+</div>
+
+<!-- Vue.jsアプリ実行コード部分 -->
+<script>
+    //子コンポーネント
+    let emitTst = {
+        template: `<div>
+            <button @click="childMethod">子のボタン
+            </button>
+        </div>`,
+        methods: {
+            childMethod() {
+                this.$emit('cus-event', '子で設定した値')
+            }
+        }
+    }
+
+    //親側のコンポーネント
+    let app = new Vue({ //インスタンス生成
+        el: '#app',
+        components: {
+            emitTst
+        },
+        data() { //初期値設定
+            return {
+
+            }
+        },
+        methods: {
+            parentMethod(e) {
+                console.log(e);
+            }
+        }
+    })
+</script>

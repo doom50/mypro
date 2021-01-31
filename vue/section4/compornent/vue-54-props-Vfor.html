@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue-54-props-Vfor</title>
+  <style>
+    .parent {
+      width: 900px;
+      margin: 0 auto;
+      border: 3px rgb(37, 156, 111) solid;
+    }
+
+    .child {
+      width: 30%;
+      margin: 10px auto;
+      border: 2.5px orange solid;
+      text-align: center;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+  </style>
+</head>
+
+<body>
+  <!--仮想DOM部分-->
+  <div id="app" class="parent">
+    <array-t v-for="member in members"
+    :key="member.name"
+    :item="member"
+    class="child">
+
+    </array-t>
+  </div>
+
+  <!-- Vue.jsアプリ実行コード部分 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+  <script>
+    let arrayTest = { //Objectで変数宣言
+      props: {        //propsもObjで定義
+        item: {
+          type: Object
+        }
+      },
+      template: `<div>
+        <p> {{ item.name}} </p><!--propsのオブジェクト名 -->
+        </div>`
+    }
+    let app = new Vue({
+      el: '#app',
+      components: {
+        'array-t' : arrayTest
+      },
+      data() {
+        return {
+          members: [
+            { name: '向井' },
+            { name: '田淵' },
+            { name: '中尾' },
+            { name: '稲澤' },
+          ]
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

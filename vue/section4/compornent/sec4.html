@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue-plac_</title>
+  <style>
+    .parent {
+      width: 600px;
+      margin: 0 auto;
+      border: 2px rgb(37, 156, 111) solid;
+    }
+
+    .child {
+      width: 30%;
+      margin: 10px auto;
+      border: 2.5px orange solid;
+      font-size: 1.3rem;
+      /*font-family: Georgia, 'Times New Roman', Times, serif;*/
+      /*font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+    }
+  </style>
+</head>
+
+<body>
+  <!--仮想DOM部分-->
+  <!-- 親コンポーネント id="app"-->
+  <div id="app" class="parent">
+    <!--子コンポーネント-->
+    <my-comp title="テスト" class="child"></my-comp>
+    <my-comp :title="parentTitle" class="child"></my-comp>
+    <my-comp disabled class="child"></my-comp>
+  </div>
+
+  <!-- Vue.jsアプリ実行コード部分 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+
+  <script>
+    let myComp = {
+      template: `<div>
+        あああ
+        {{ getTitle }}
+      <div v-show="isShow">表示</div></div>`,
+      props: {
+        title: {
+          type: String
+        },
+        disabled: {
+          type: Boolean,
+          default: false
+        },
+      },
+       data() {
+        return {
+          isShow: false,
+          getTitle: this.title
+        }
+      }
+    }
+
+    let app = new Vue({
+      el: '#app',
+      components: {
+        // 'my-component': myComponent
+        myComp
+      },
+      data() {
+        return {
+          parentTitle: '親側のタイトル'
+        }
+      }
+    })
+
+  </script>
+</body>
+
+</html>
